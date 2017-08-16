@@ -96,6 +96,10 @@ public class HttpUtil {
 			throw new Exception("URL地址错误",e);
 		} catch (IOException e) {
 			throw new Exception("传输错误",e);
+		} finally{
+			if(httpClient != null){
+				httpClient.close();
+			}
 		}
 	}
 }
